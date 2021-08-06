@@ -1,0 +1,19 @@
+{
+ "display_name": "Black Panther",
+ "language": "python",
+ "argv": [
+  "/opt/anaconda/bin/python",
+  "-m",
+  "ipykernel",
+  "-f",
+  "{connection_file}"
+ ],
+  "env": {
+  "SPARK_HOME": "/opt/spark/",
+  "PYTHONPATH": "/opt/spark/python/:/opt/spark/python/lib/py4j-0.10.7-src.zip",
+  "PYTHONSTARTUP": "/opt/spark/python/pyspark/shell.py",
+  "JAVA_HOME": "${JAVA_HOME}",
+  "PATH": "/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/spark/bin:/opt/scala/bin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:${JAVA_HOME}:/opt/spark/bin:/opt/scala/bin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/spark/bin:/opt/scala/bin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:${JAVA_HOME}:${JAVA_HOME}:/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/spark/bin:/opt/scala/bin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:${JAVA_HOME}",
+  "PYSPARK_SUBMIT_ARGS": "--master spark://node1:7077 --name my_wakanda_app pyspark-shell"
+ }
+}
