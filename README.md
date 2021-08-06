@@ -37,7 +37,7 @@ The objective of this project is to implement a standalone SPARK/HADOOP environm
 
 
 # Kernels
-* Iron man
+* Iron Man
   - Cores: 2
   - Memory: 2 GB
   - Competition: Maximum number of CPU cores and RAM memory available on the machine. 
@@ -98,7 +98,7 @@ http://0.0.0.0:8000
 ### Spark Master web UI
 ```
 
-http://0.0.0.0:8000
+http://0.0.0.0:8080
 
 ```
 ### HDFS web UI
