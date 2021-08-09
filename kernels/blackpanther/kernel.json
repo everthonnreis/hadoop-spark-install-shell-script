@@ -14,6 +14,6 @@
   "PYTHONSTARTUP": "/opt/spark/python/pyspark/shell.py",
   "JAVA_HOME": "${JAVA_HOME}",
   "PATH": "/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/spark/bin:/opt/scala/bin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:${JAVA_HOME}:/opt/spark/bin:/opt/scala/bin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/spark/bin:/opt/scala/bin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:${JAVA_HOME}:${JAVA_HOME}:/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/opt/spark/bin:/opt/scala/bin:/opt/hadoop/bin:/opt/hadoop/sbin:/opt/anaconda/bin:/usr/local/bin:/bin:/usr/bin:/usr/local/sbin:/usr/sbin:${JAVA_HOME}",
-  "PYSPARK_SUBMIT_ARGS": "--master spark://node1:7077 --name my_wakanda_app pyspark-shell"
+  "PYSPARK_SUBMIT_ARGS": "--master spark://node1:7077 --name my_wakanda_app --total-executor-cores 4 --driver-memory 4g --executor-memory 4g pyspark-shell"
  }
 }

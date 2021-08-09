@@ -268,8 +268,8 @@ install_hadoop(){
     echo ""
     echo "| ##### Creating SSH Key ##### |"
     echo ""
-    ssh-keygen -t rsa -P '' -f ~/.ssh/hadoop
-    cat ~/.ssh/hadoop.pub >> ~/.ssh/authorized_keys
+    ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
     chmod 0600 ~/.ssh/authorized_keys
 
     echo ""
@@ -337,7 +337,7 @@ install_jupyterhub(){
     echo "| ##### Install python packages... ##### |"
     echo ""    
     pip install git+https://github.com/jupyter/sudospawner
-    pip install pydoop python-socketio jellyfish elasticsearch websocket-client websockets datetime pyspark==3.1.1 Crypto dbfread esutil pybase64
+    pip install pydoop jupyterhub-nativeauthenticator python-socketio jellyfish elasticsearch websocket-client websockets datetime pyspark==3.1.1 Crypto dbfread esutil pybase64
 
     echo "" 
     echo "| ##### Jupyterhub directory ##### |"
@@ -347,8 +347,9 @@ install_jupyterhub(){
     echo ""
     echo "| ##### Moving Jupyterhub configured files... ##### |"
     echo ""
-    sed -i 's|c.Authenticator.admin_users = {}|c.Authenticator.admin_users = {'\'${USER}\''}||g' ${GIT_DIR}/jupyterhub_file/jupyterhub_config.py
+    
     sudo cp -r ${GIT_DIR}/jupyterhub_file/* /etc/jupyterhub/
+    sed -i 's|c.Authenticator.admin_users = {}|c.Authenticator.admin_users = {'\'${USER}\''}||g' /etc/jupyterhub/jupyterhub_config.py
 
     # create jupyter service
 
