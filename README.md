@@ -42,8 +42,8 @@ The objective of this project is to implement a standalone SPARK/HADOOP environm
   - Memory: 2 GB
   - Competition: Maximum number of CPU cores and RAM memory available on the machine. 
 * Black Panther
-  - Cores: Maximum number of CPU cores
-  - Memory: 3 GB
+  - Cores: 4
+  - Memory: 4 GB
 
 #### Notes: The kernel configuration can be customized according to the resources you have. All you need to do is change the following options:
 Attention! Before the change, kill the open spark contexts.
