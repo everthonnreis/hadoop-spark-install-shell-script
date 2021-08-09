@@ -16,7 +16,7 @@ then
      sudo yum update -y
      sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
      sudo yum update -y
-     sudo yum install -y pv compat-openssl10 wget curl git net-tools gcc gcc-c++
+     sudo yum install -y pv compat-openssl10 wget curl git net-tools gcc gcc-c++ java-1.8.0-openjdk-devel.x86_64 libtirpc-devel
 else 
      sudo yum update -y
      sudo yum install -y epel-release
@@ -252,6 +252,7 @@ set_spark_env(){
     echo 'export HADOOP_OPTS="-Djava.library.path=${HADOOP_HOME}/lib/native"' >> ${HOME}/${BASH_FILE}
     echo 'export YARN_HOME=${HADOOP_HOME}' >> ${HOME}/${BASH_FILE}
     echo 'export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native' >> ${HOME}/${BASH_FILE}
+    echo 'export CFLAGS=-I/usr/include/tirpc'
     echo "" >> ${HOME}/${BASH_FILE}
     echo 'PATH=$PATH:$HOME/.local/bin:$HOME/bin:${SPARK_HOME}/bin:${SCALA_HOME}/bin:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin:$PATH:$JAVA_HOME:$HADOOP_COMMON_LIB_NATIVE_DIR:$PATH' >> ${HOME}/${BASH_FILE}
     echo "export PATH" >> ${HOME}/${BASH_FILE}
@@ -267,8 +268,8 @@ install_hadoop(){
     echo ""
     echo "| ##### Creating SSH Key ##### |"
     echo ""
-    ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
-    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+    ssh-keygen -t rsa -P '' -f ~/.ssh/hadoop
+    cat ~/.ssh/hadoop.pub >> ~/.ssh/authorized_keys
     chmod 0600 ~/.ssh/authorized_keys
 
     echo ""
@@ -346,7 +347,7 @@ install_jupyterhub(){
     echo ""
     echo "| ##### Moving Jupyterhub configured files... ##### |"
     echo ""
-    sed -i 's|c.Authenticator.admin_users = {}|c.Authenticator.admin_users = {'${USER}'}|g' ${GIT_DIR}/jupyterhub_file/jupyterhub_config.py
+    sed -i 's|c.Authenticator.admin_users = {}|c.Authenticator.admin_users = {'\'${USER}\''}||g' ${GIT_DIR}/jupyterhub_file/jupyterhub_config.py
     sudo cp -r ${GIT_DIR}/jupyterhub_file/* /etc/jupyterhub/
 
     # create jupyter service
