@@ -37,7 +37,7 @@ The objective of this project is to implement a standalone SPARK/HADOOP environm
 
 
 # Kernels
-* Iron Man
+* Iron man
   - Cores: 2
   - Memory: 2 GB
   - Competition: Maximum number of CPU cores and RAM memory available on the machine. 
@@ -65,7 +65,7 @@ $ vim /opt/anaconda/share/jupyter/kernels/ironman/kernel.json`
 
 $ git clone https://github.com/everthonnreis/hadoop-spark-install-shell-script.git
 
-$ cd hadoop-spark-install-shell-script/
+$ cd hadoop-spark-install-shell-script
 
 $ ./install.sh
 
@@ -85,7 +85,7 @@ Attention! Run the services start script only after updating your .bash_profile.
 $ ./start-services.sh
 
 ```
-The hdfs namenode will be formatted. And services will go up. When requesting [yes|no] enter yes to authorize authentication.
+The hdfs namenode will be formatted. And services will go up. When requesting (yes|no) enter yes to authorize authentication.
 
 # Using the environment
 
@@ -98,7 +98,7 @@ http://0.0.0.0:8000
 ### Spark Master web UI
 ```
 
-http://0.0.0.0:8080
+http://0.0.0.0:8000
 
 ```
 ### HDFS web UI

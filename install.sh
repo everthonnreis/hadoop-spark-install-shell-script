@@ -1,8 +1,6 @@
 #! /bin/sh
 #! -*- coding:utf-8; mode:shell-script; -*-
 
-#https://www.programmersought.com/article/25802542377/
-
 program='install_seg_environment'
 version='1.0'
 
@@ -40,7 +38,6 @@ ZOOKEEPER='zookeeper-3.6.2'
 ANACONDA='Anaconda3-2020.02-Linux-x86_64'
 CONDA_SPEC_FILE='spec_file_nana.txt'
 BASH_FILE=".bash_profile"
-
 SPARK_HOME="${ROOT_DIR}/spark"
 HADOOP_HOME="${ROOT_DIR}/hadoop"
 SCALA_HOME="${ROOT_DIR}/scala"
