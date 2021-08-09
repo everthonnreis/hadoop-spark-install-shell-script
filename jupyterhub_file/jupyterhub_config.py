@@ -49,8 +49,9 @@ c.Application.log_datefmt = '%Y-%m-%d %H:%M:%S'
 #c.Authenticator.admin_users = {${USER}}
 ## Allow named single-user servers per user
 #c.JupyterHub.allow_named_servers = False
-c.PAMAuthenticator.open_sessions = False
-
+#c.PAMAuthenticator.open_sessions = False
+c.JupyterHub.authenticator_class = 'nativeauthenticator.NativeAuthenticator'
+c.Authenticator.admin_users = {}
 ## Answer yes to any questions (e.g. confirm overwrite)
 #c.JupyterHub.answer_yes = False
 

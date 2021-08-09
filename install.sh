@@ -330,7 +330,7 @@ install_jupyterhub(){
 
    cd ${GIT_DIR}
 
-    conda install -c conda-forge jupyterhub findspark
+    conda install -c conda-forge jupyterhub findspark ruamel.yaml
     pip install --upgrade pip
     echo "" 
     echo "| ##### Install python packages... ##### |"
@@ -346,6 +346,7 @@ install_jupyterhub(){
     echo ""
     echo "| ##### Moving Jupyterhub configured files... ##### |"
     echo ""
+    sed -i 's|c.Authenticator.admin_users = {}|c.Authenticator.admin_users = {'${USER}'}|g' ${GIT_DIR}/jupyterhub_file/jupyterhub_config.py
     sudo cp -r ${GIT_DIR}/jupyterhub_file/* /etc/jupyterhub/
 
     # create jupyter service
