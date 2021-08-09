@@ -63,7 +63,7 @@ $ vim /opt/anaconda/share/jupyter/kernels/ironman/kernel.json`
 
 ```
 
-$ wget https://github.com/everthonnreis/hadoop-spark-install-shell-script
+$ git clone https://github.com/everthonnreis/hadoop-spark-install-shell-script
 
 $ cd hadoop-spark-install-shell-script/
 
