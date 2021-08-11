@@ -34,6 +34,7 @@ The objective of this project is to implement a standalone SPARK/HADOOP environm
 * dbfread: 2.0.7 
 * esutil: 0.6.8
 * pybase64: 1.1.4
+* jupyterhub-nativeauthenticator: 0.0.7
 
 
 # Kernels
@@ -57,7 +58,6 @@ $ vim /opt/anaconda/share/jupyter/kernels/ironman/kernel.json`
 "PYSPARK_SUBMIT_ARGS": "--master spark://node1:7077 --name my_jarvis_app --total-executor-cores 2 --driver-memory 2g --executor-memory 2g pyspark-shell" 
 
 ```
-
 
 # Execution
 
