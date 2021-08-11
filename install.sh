@@ -21,7 +21,7 @@ else
      sudo yum update -y
      sudo yum install -y epel-release
      sudo yum update -y
-     sudo yum install -y pv compat-openssl10 wget curl git net-tools gcc gcc-c++
+     sudo yum install -y pv compat-openssl10 wget curl git net-tools gcc gcc-c++ libtirpc-devel
 fi
 
 
