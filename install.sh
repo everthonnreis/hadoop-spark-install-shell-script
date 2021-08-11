@@ -109,8 +109,10 @@ set_java_home() {
 
     if type -p java; 
     then
+        sudo yum install java-1.8.0-openjdk-devel.x86_64
+
         _JAVA=java
-        
+       
         $_JAVA -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home' > java_home.txt
         sed -i 's/java.home =//g;s/ //g' java_home.txt
         JAVA_PATH=`cat java_home.txt`
@@ -252,8 +254,8 @@ set_spark_env(){
     echo 'export HADOOP_OPTS="-Djava.library.path=${HADOOP_HOME}/lib/native"' >> ${HOME}/${BASH_FILE}
     echo 'export YARN_HOME=${HADOOP_HOME}' >> ${HOME}/${BASH_FILE}
     echo 'export HADOOP_COMMON_LIB_NATIVE_DIR=${HADOOP_HOME}/lib/native' >> ${HOME}/${BASH_FILE}
-    echo 'export CFLAGS=-I/usr/include/tirpc'
-    echo "" >> ${HOME}/${BASH_FILE}
+    echo 'export CFLAGS=-I/usr/include/tirpc' >> ${HOME}/${BASH_FILE}
+    echo "" >> ${HOME}/${BASH_FILE} 
     echo 'PATH=$PATH:$HOME/.local/bin:$HOME/bin:${SPARK_HOME}/bin:${SCALA_HOME}/bin:${HADOOP_HOME}/bin:${HADOOP_HOME}/sbin:$PATH:$JAVA_HOME:$HADOOP_COMMON_LIB_NATIVE_DIR:$PATH' >> ${HOME}/${BASH_FILE}
     echo "export PATH" >> ${HOME}/${BASH_FILE}
 
@@ -349,7 +351,7 @@ install_jupyterhub(){
     echo ""
     
     sudo cp -r ${GIT_DIR}/jupyterhub_file/* /etc/jupyterhub/
-    sed -i 's|c.Authenticator.admin_users = {}|c.Authenticator.admin_users = {'\'${USER}\''}||g' /etc/jupyterhub/jupyterhub_config.py
+    sudo sed -i 's|c.Authenticator.admin_users = {}|c.Authenticator.admin_users = {'\'${USER}\''}|g' /etc/jupyterhub/jupyterhub_config.py
 
     # create jupyter service
 
