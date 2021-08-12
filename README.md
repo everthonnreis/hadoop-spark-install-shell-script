@@ -1,10 +1,15 @@
 # hadoop-spark-install-shell-script
 The objective of this project is to implement a standalone SPARK/HADOOP environment for test development.
 
-
-<img src="https://user-images.githubusercontent.com/67954957/128548227-8591f6e2-4d23-4f7d-80a9-fa7dafaa2e58.png" width="800" height="400">
-<img src="https://user-images.githubusercontent.com/67954957/128548304-0fcbbeb8-71b4-4118-aa74-5fad7bcd5288.png" width="800" height="400">
-<img src="https://user-images.githubusercontent.com/67954957/128548376-ffecf056-021a-4c41-bf05-384575147eaa.png" width="800" height="400">
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/67954957/128548227-8591f6e2-4d23-4f7d-80a9-fa7dafaa2e58.png" width="800" height="400">
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/67954957/128548304-0fcbbeb8-71b4-4118-aa74-5fad7bcd5288.png" width="800" height="400">
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/67954957/128548376-ffecf056-021a-4c41-bf05-384575147eaa.png" width="800" height="400">
+</p>
 
 ### Attention! Settings were made for a test environment!
 
@@ -95,6 +100,19 @@ The hdfs namenode will be formatted. And services will go up. When requesting (y
 http://0.0.0.0:8000
 
 ```
+On the jupyterhub login screen, click on "signup" and enter the username and password you run the script.
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/67954957/129245229-7824e2ea-3177-421a-af0a-9c072bbfaff9.png" width="800" height="400">
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/67954957/129246337-3654efa1-b898-4a15-8af9-586ee232d8a9.png" width="800" height="400">
+</p>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/67954957/129251344-7ba663f5-8a6e-48ef-ada9-aa085a787ff8.png" width="800" height="400">
+</p>
+
+After receiving the message "Your information has been sent to the admin", click "Login!" and enter the username and password. The jupyterhub Server will be started.
+
 ### Spark Master web UI
 ```
 
@@ -131,6 +149,58 @@ C:\Windows\System32\drivers\etc\hosts
 0.0.0.0 node1
 
 ```
+# Useful commands
+
+## HDFS
+### Start HDFS services
+```
+
+$ start-all.sh
+
+```
+### Stop HDFS services
+```
+
+$ stop-all.sh
+
+```
+
+## Spark
+### Start Spark services
+```
+
+$ /opt/spark/sbin/start-master.sh && /opt/spark/sbin/start-slave.sh spark://node1:7077
+
+```
+### Stop Spark services
+```
+
+$ /opt/spark/sbin/stop-master.sh && /opt/spark/sbin/stop-slave.sh 
+
+```
+## Jupyterhub
+### Check jupyterhub service
+```
+
+$ sudo systemctl status jupyterhub.service
+
+```
+### Start, restart and stop jupyterhub service
+```
+
+$ sudo systemctl [start|restart|stop] jupyterhub.service
+
+```
+## Java Virtual Machine Process Status
+```
+
+$ jps
+
+```
+<p align="center">
+<img src="https://user-images.githubusercontent.com/67954957/129253370-c479bb35-96c7-4fd7-9a95-cff25b69306b.png" width="550" height="200">
+</p>
+
 
 
 
