@@ -52,7 +52,6 @@ The objective of this project is to implement a standalone SPARK/HADOOP environm
   - Memory: 4 GB
 
 #### Notes: The kernel configuration can be customized according to the resources you have. All you need to do is change the following options:
-Attention! Before the change, kill the open spark contexts.
 
 Swap the total number of cores and memory.
 
@@ -63,6 +62,7 @@ $ vim /opt/anaconda/share/jupyter/kernels/ironman/kernel.json`
 "PYSPARK_SUBMIT_ARGS": "--master spark://node1:7077 --name my_jarvis_app --total-executor-cores 2 --driver-memory 2g --executor-memory 2g pyspark-shell" 
 
 ```
+Restart kernel on notebook
 
 # Execution
 
