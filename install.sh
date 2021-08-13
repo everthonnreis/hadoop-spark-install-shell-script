@@ -16,7 +16,7 @@ then
      sudo yum update -y
      sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
      sudo yum update -y
-     sudo yum install -y pv compat-openssl10 wget curl git net-tools gcc gcc-c++ java-1.8.0-openjdk-devel.x86_64 libtirpc-devel
+     sudo yum install -y pv compat-openssl10 wget curl git net-tools gcc gcc-c++ java-1.8.0-openjdk-devel.x86_64 libtirpc-devel glibc-common glibc glibc-headers glibc-devel
 else 
      sudo yum update -y
      sudo yum install -y epel-release
