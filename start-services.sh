@@ -15,7 +15,7 @@ start_hadoop(){
     echo ""
     echo "| ##### Starting HDFS ##### |"
     echo ""
-    /opt/hadoop/sbin/./start-all.sh
+    /opt/hadoop/sbin/./start-dfs.sh
 
     hdfs dfs -mkdir /npd
 
