@@ -1,7 +1,6 @@
 #! /bin/sh
 #! -*- coding:utf-8; mode:shell-script; -*-
 
-#https://www.programmersought.com/article/25802542377/
 
 program='start_services'
 version='1.0'
