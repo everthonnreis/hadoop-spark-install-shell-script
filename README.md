@@ -149,19 +149,32 @@ C:\Windows\System32\drivers\etc\hosts
 0.0.0.0 node1
 
 ```
+# Start and Stop 
+In case you need to shutdown your server/VM and it is not impacted by the HDFS data or services that have been started. Use scripts from the `script_files` directory.
+```
+
+$ services-start.sh
+
+```
+```
+
+$ services-stop.sh
+
+```
+
 # Useful commands
 
 ## HDFS
 ### Start HDFS services
 ```
 
-$ start-all.sh
+$ start-dfs.sh
 
 ```
 ### Stop HDFS services
 ```
 
-$ stop-all.sh
+$ stop-dfs.sh
 
 ```
 
