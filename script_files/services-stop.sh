@@ -9,7 +9,7 @@ stop_hadoop(){
 
     echo "| ##### Stopping HADOOP service ##### |"	
     echo ""
-    /opt/hadoop/sbin/./stop-all.sh
+    /opt/hadoop/sbin/./stop-dfs.sh
    
 }
 
